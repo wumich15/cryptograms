@@ -27,6 +27,5 @@ input.addEventListener("input", () => { clearTimeout(timer); timer = setTimeout(
 
 loadModel("model/").then(({ model: m }) => {
   model = m;
-  out.dataset.placeholder = "The decryption appears here.";
   solve();
-}).catch((e) => { out.dataset.placeholder = "Could not load the model: " + e.message; });
+}).catch((e) => { out.textContent = "Could not load the model: " + e.message; });
