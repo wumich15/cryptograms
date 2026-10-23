@@ -1,0 +1,24 @@
+Cryptograms
+Copyright 2026 Michael Wu
+
+A static web page that runs CipherLoop-S, a 241,758-parameter substitution-cipher
+solver, entirely in the browser. Model and training code:
+https://github.com/wumich15/cipherloop
+
+CipherLoop builds on ALICE (https://github.com/al-jshen/alice), Copyright (c)
+Jeff Shen and Lindsay M. Smith, licensed under the Apache License, Version 2.0
+(see third_party/ALICE_LICENSE). J. Shen and L. M. Smith, "ALICE: An
+Interpretable Neural Architecture for Generalization in Substitution Ciphers",
+arXiv:2509.07282.
+
+Model weights (model/weights.bin) were trained on QUOTES500K -- S. Goel,
+R. Madhok, S. Garg, "Proposing Contextually Relevant Quotes for Images",
+ECIR 2018 (doi:10.1007/978-3-319-76941-7_49); original release
+https://github.com/ShivaliGoel/Quotes-500K, made publicly available by its
+authors "for educational and research purposes". This site is non-commercial.
+No dataset text is included here.
+
+The page's visual style is modeled on Autograder.io's open-source frontend
+(https://github.com/eecs-autograder/ag-website-vue, LGPL-3.0). No code from it
+is included; this site is not affiliated with Autograder.io or the University
+of Michigan.

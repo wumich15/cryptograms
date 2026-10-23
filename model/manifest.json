@@ -1,0 +1,275 @@
+{
+ "format": "float32-le",
+ "version": "0f9d3ba3898d8992",
+ "sha256": "0f9d3ba3898d8992c6355bd73a1949c7bd9f16875cf8135b442fbe3f290ca393",
+ "bytes": 967032,
+ "params": 241758,
+ "config": {
+  "dim": 96,
+  "n_head": 4,
+  "ffn_tok": 256,
+  "ffn_sym": 192,
+  "id_dim": 32,
+  "n_inner": 2,
+  "n_outer": 8
+ },
+ "vocab": "ABCDEFGHIJKLMNOPQRSTUVWXYZ .,!?-;:'\"",
+ "checkpoint": {
+  "step": 50000,
+  "weights": "ema",
+  "best_val_mean_ser": 1.4848471879959106
+ },
+ "tensors": [
+  {
+   "name": "sym_base",
+   "shape": [
+    96
+   ],
+   "offset": 0,
+   "length": 96
+  },
+  {
+   "name": "tok_embed.weight",
+   "shape": [
+    12,
+    96
+   ],
+   "offset": 96,
+   "length": 1152
+  },
+  {
+   "name": "id_proj.weight",
+   "shape": [
+    96,
+    32
+   ],
+   "offset": 1248,
+   "length": 3072
+  },
+  {
+   "name": "stat_mlp.0.weight",
+   "shape": [
+    96,
+    13
+   ],
+   "offset": 4320,
+   "length": 1248
+  },
+  {
+   "name": "stat_mlp.0.bias",
+   "shape": [
+    96
+   ],
+   "offset": 5568,
+   "length": 96
+  },
+  {
+   "name": "stat_mlp.2.weight",
+   "shape": [
+    96,
+    96
+   ],
+   "offset": 5664,
+   "length": 9216
+  },
+  {
+   "name": "stat_mlp.2.bias",
+   "shape": [
+    96
+   ],
+   "offset": 14880,
+   "length": 96
+  },
+  {
+   "name": "plain_embed.weight",
+   "shape": [
+    26,
+    96
+   ],
+   "offset": 14976,
+   "length": 2496
+  },
+  {
+   "name": "cell.eq_w",
+   "shape": [
+    4
+   ],
+   "offset": 17472,
+   "length": 4
+  },
+  {
+   "name": "cell.tok_attn.wqkv.weight",
+   "shape": [
+    288,
+    96
+   ],
+   "offset": 17476,
+   "length": 27648
+  },
+  {
+   "name": "cell.tok_attn.wo.weight",
+   "shape": [
+    96,
+    96
+   ],
+   "offset": 45124,
+   "length": 9216
+  },
+  {
+   "name": "cell.tok_ffn.w1.weight",
+   "shape": [
+    256,
+    96
+   ],
+   "offset": 54340,
+   "length": 24576
+  },
+  {
+   "name": "cell.tok_ffn.w3.weight",
+   "shape": [
+    256,
+    96
+   ],
+   "offset": 78916,
+   "length": 24576
+  },
+  {
+   "name": "cell.tok_ffn.w2.weight",
+   "shape": [
+    96,
+    256
+   ],
+   "offset": 103492,
+   "length": 24576
+  },
+  {
+   "name": "cell.sym_attn.wqkv.weight",
+   "shape": [
+    288,
+    96
+   ],
+   "offset": 128068,
+   "length": 27648
+  },
+  {
+   "name": "cell.sym_attn.wo.weight",
+   "shape": [
+    96,
+    96
+   ],
+   "offset": 155716,
+   "length": 9216
+  },
+  {
+   "name": "cell.sym_ffn.w1.weight",
+   "shape": [
+    192,
+    96
+   ],
+   "offset": 164932,
+   "length": 18432
+  },
+  {
+   "name": "cell.sym_ffn.w3.weight",
+   "shape": [
+    192,
+    96
+   ],
+   "offset": 183364,
+   "length": 18432
+  },
+  {
+   "name": "cell.sym_ffn.w2.weight",
+   "shape": [
+    96,
+    192
+   ],
+   "offset": 201796,
+   "length": 18432
+  },
+  {
+   "name": "cell.s2t.weight",
+   "shape": [
+    96,
+    96
+   ],
+   "offset": 220228,
+   "length": 9216
+  },
+  {
+   "name": "cell.t2s.weight",
+   "shape": [
+    96,
+    96
+   ],
+   "offset": 229444,
+   "length": 9216
+  },
+  {
+   "name": "cell.norms.0.weight",
+   "shape": [
+    96
+   ],
+   "offset": 238660,
+   "length": 96
+  },
+  {
+   "name": "cell.norms.1.weight",
+   "shape": [
+    96
+   ],
+   "offset": 238756,
+   "length": 96
+  },
+  {
+   "name": "cell.norms.2.weight",
+   "shape": [
+    96
+   ],
+   "offset": 238852,
+   "length": 96
+  },
+  {
+   "name": "cell.norms.3.weight",
+   "shape": [
+    96
+   ],
+   "offset": 238948,
+   "length": 96
+  },
+  {
+   "name": "cell.norms.4.weight",
+   "shape": [
+    96
+   ],
+   "offset": 239044,
+   "length": 96
+  },
+  {
+   "name": "cell.norms.5.weight",
+   "shape": [
+    96
+   ],
+   "offset": 239140,
+   "length": 96
+  },
+  {
+   "name": "head.weight",
+   "shape": [
+    26,
+    96
+   ],
+   "offset": 239236,
+   "length": 2496
+  },
+  {
+   "name": "head.bias",
+   "shape": [
+    26
+   ],
+   "offset": 241732,
+   "length": 26
+  }
+ ],
+ "attribution": "Dataset: QUOTES500K\n  S. Goel, R. Madhok, S. Garg. \"Proposing Contextually Relevant Quotes for Images.\"\n  Advances in Information Retrieval (ECIR 2018), Springer. doi:10.1007/978-3-319-76941-7_49\n  Original release: https://github.com/ShivaliGoel/Quotes-500K (quotes crawled from goodreads.com,\n  brainyquote.com, famousquotesandauthors.com, curatedquotes.com)\n  Copy used: Hugging Face dataset `jstet/quotes-500k`\n  Terms: released by the authors \"for educational and research purposes\"; the authors ask that\n  their paper be cited. Used here for non-commercial research only; the data is not redistributed.\nPreprocessing and train/test split: ALICE (J. Shen, L. M. Smith, arXiv:2509.07282;\n  github.com/al-jshen/alice, Apache-2.0).\n"
+}
