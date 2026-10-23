@@ -2,8 +2,7 @@ Cryptograms
 Copyright 2026 Michael Wu
 
 A static web page that runs CipherLoop-S, a 241,758-parameter substitution-cipher
-solver, entirely in the browser. Model and training code:
-https://github.com/wumich15/cipherloop
+solver, entirely in the browser.
 
 CipherLoop builds on ALICE (https://github.com/al-jshen/alice), Copyright (c)
 Jeff Shen and Lindsay M. Smith, licensed under the Apache License, Version 2.0

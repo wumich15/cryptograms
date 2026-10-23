@@ -8,9 +8,8 @@ Storage, so later visits load instantly and work offline. "Show steps" lists the
 16 refinement steps.
 
 On the QUOTES500K test set the model (CipherLoop-S) decodes 98.9% of characters correctly in quotes under 128
-characters. That is statistically level with the 85M-parameter ALICE model at 352× fewer parameters; see the
-[training repo](https://github.com/wumich15/cipherloop) for the full results. Very short texts (under ~30
-letters) often have several valid solutions, so expect mistakes there.
+characters. That is statistically level with the 85M-parameter ALICE model at 352× fewer parameters. Very
+short texts (under ~30 letters) often have several valid solutions, so expect mistakes there.
 
 ## Run locally
 

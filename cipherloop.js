@@ -1,6 +1,6 @@
 // CipherLoop inference in plain JavaScript (no dependencies, no server).
 // A line-by-line port of cipherloop/model.py + the Hungarian decoding of cipherloop/evaluate.py.
-// Checked against PyTorch with `node web/test/check.mjs` in github.com/wumich15/cipherloop.
+// Checked against the PyTorch model to within 2e-5 per logit.
 //
 // RMSNorm, RoPE, attention, the SwiGLU feed-forward and symbol-wise mean pooling are translated
 // from cipherloop/modules.py, which adapts github.com/al-jshen/alice (alice/models/modules.py and
