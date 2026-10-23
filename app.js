@@ -4,6 +4,13 @@ const $ = (id) => document.getElementById(id);
 const input = $("input"), out = $("out"), steps = $("steps");
 let model = null, run = 0, timer = null;
 
+// Example cryptograms (Aristocrats: random keys with no letter mapped to itself).
+const EXAMPLES = [
+  "XGBI BI L ~250W ALYLUHXHY UJFHC XGLX KLZ FHKJFH KYNAXJRYLUI TBXG (GJAHOMCCN FHKHZX) LKKMYLKN. HZSJN!",
+  "M ZJNR GCMOMIW MI HJBTJAMOMJI IJORYJJXA. OQRL VCR BL UVNJCMOR XMIF JU IJORYJJX. ATMCVZ JIRA VCR V YMO GRMCF UJC BR.",
+];
+let nextExample = 0;
+
 async function solve() {
   const id = ++run, text = input.value;
   if (!model) return;
@@ -24,6 +31,11 @@ async function solve() {
 }
 
 input.addEventListener("input", () => { clearTimeout(timer); timer = setTimeout(solve, 250); });
+$("example").addEventListener("click", () => {
+  input.value = EXAMPLES[nextExample++ % EXAMPLES.length];
+  clearTimeout(timer);
+  solve();
+});
 
 loadModel("model/").then(({ model: m }) => {
   model = m;

@@ -26,7 +26,10 @@
   #banner a { font-size: .875rem; text-decoration: none; }
   #banner a:hover { text-decoration: underline; }
   main { width: 100%; max-width: 760px; margin: 0 auto; padding: 1.25rem 1rem 2rem; }
-  .label { display: block; font-size: .875rem; font-weight: bold; margin: 0 0 .25rem; }
+  .label-row { display: flex; justify-content: space-between; align-items: baseline; margin: 0 0 .25rem; }
+  .label { font-size: .875rem; font-weight: bold; }
+  #example { font-size: .875rem; background: none; border: none; color: var(--link); cursor: pointer; font-family: inherit; }
+  #example:hover { text-decoration: underline; }
   textarea, #out { width: 100%; font: 15px/1.5 Menlo, Consolas, "Liberation Mono", monospace; color: var(--text); }
   textarea { min-height: 9rem; resize: vertical; padding: .375rem; border: 1px solid var(--border); border-radius: 2px;
              background: white; }
@@ -52,7 +55,10 @@
   <a href="https://github.com/wumich15/cryptograms">Source</a>
 </div>
 <main>
-  <label class="label" for="input">Ciphertext</label>
+  <div class="label-row">
+    <label class="label" for="input">Ciphertext</label>
+    <button id="example" type="button">Try an example</button>
+  </div>
   <textarea id="input" spellcheck="false" autofocus placeholder="Paste a substitution cipher…"></textarea>
 
   <div class="section-header">Decryption</div>
