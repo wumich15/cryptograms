@@ -1,4 +1,4 @@
-import { loadModel } from "./cipherloop.js";
+import { loadModel } from "./cipherloop.js?v=3";
 
 const $ = (id) => document.getElementById(id);
 const input = $("input"), out = $("out"), steps = $("steps");
