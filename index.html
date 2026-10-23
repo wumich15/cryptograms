@@ -17,14 +17,15 @@
     --focus: hsl(208, 59%, 55%);
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: white; color: var(--text); font: 16px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  body { background: white; color: var(--text); font: 16px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+         min-height: 100vh; display: flex; flex-direction: column; }
   a { color: var(--link); }
   #banner { display: flex; justify-content: space-between; align-items: center; background: var(--banner);
             padding: .5rem 1rem; }
   #banner h1 { font-size: 1.5rem; font-weight: normal; }
   #banner a { font-size: .875rem; text-decoration: none; }
   #banner a:hover { text-decoration: underline; }
-  main { max-width: 760px; margin: 0 auto; padding: 1.25rem 1rem 2rem; }
+  main { width: 100%; max-width: 760px; margin: 0 auto; padding: 1.25rem 1rem 2rem; }
   .label { display: block; font-size: .875rem; font-weight: bold; margin: 0 0 .25rem; }
   textarea, #out { width: 100%; font: 15px/1.5 Menlo, Consolas, "Liberation Mono", monospace; color: var(--text); }
   textarea { min-height: 9rem; resize: vertical; padding: .375rem; border: 1px solid var(--border); border-radius: 2px;
@@ -41,7 +42,9 @@
   summary { cursor: pointer; color: var(--link); }
   ol { margin: .5rem 0 0; padding-left: 2.25em; font: 13px/1.5 Menlo, Consolas, "Liberation Mono", monospace; }
   li { white-space: pre-wrap; word-break: break-word; margin-bottom: .25rem; }
-  footer { margin-top: 2.5rem; padding-top: .75rem; border-top: 1px solid var(--border); color: var(--muted); font-size: .75rem; }
+  footer { margin-top: auto; padding: .75rem 1rem; border-top: 1px solid var(--border); background: var(--panel);
+           color: var(--muted); font-size: .75rem; text-align: center; }
+  footer p { max-width: 760px; margin: 0 auto; }
 </style>
 </head>
 <body>
@@ -60,13 +63,13 @@
     <ol id="steps"></ol>
   </details>
 
-  <footer>
-    Runs entirely in your browser; nothing you type is sent anywhere. Model: CipherLoop-S (241K parameters), built on
+</main>
+<footer>
+  <p>Inference runs locally on your browser! Model: CipherLoop-S (241K parameters), built on
     ALICE (Shen &amp; Smith, <a href="https://arxiv.org/abs/2509.07282">arXiv:2509.07282</a>; code Apache-2.0).
     Trained on QUOTES500K (Goel, Madhok &amp; Garg, ECIR 2018), released by its authors for educational and research
-    purposes; this site is non-commercial.
-  </footer>
-</main>
+    purposes; this site is non-commercial.</p>
+</footer>
 <script type="module" src="app.js"></script>
 </body>
 </html>
