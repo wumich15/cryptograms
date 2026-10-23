@@ -1,8 +1,13 @@
-import { loadModel } from "./cipherloop.js?v=3";
+import { loadModel } from "./cipherloop.js?v=4";
 
 const $ = (id) => document.getElementById(id);
 const input = $("input"), out = $("out"), steps = $("steps");
-let model = null, run = 0, timer = null;
+let model = null, run = 0, timer = null, countTimer = null;
+
+// "Ciphers decoded" counter, kept off-site on Abacus (abacus.jasoncameron.dev). Only a +1 is sent, never any text.
+// Read it at https://abacus.jasoncameron.dev/get/wumich15-cryptograms/ciphers-decoded
+const COUNTER = "https://abacus.jasoncameron.dev/hit/wumich15-cryptograms/ciphers-decoded";
+const counted = new Set();
 
 // Example cryptograms (Aristocrats: random keys with no letter mapped to itself).
 const EXAMPLES = [
@@ -28,12 +33,22 @@ async function solve() {
       await new Promise((r) => setTimeout(r, 0));
     },
   });
+  // Count a decode once the text has stayed the same for 3 s (not on every keystroke); the examples don't count.
+  const key = text.trim();
+  if (id !== run || EXAMPLES.includes(key) || counted.has(key) || (key.match(/[a-z]/gi) || []).length < 8) return;
+  clearTimeout(countTimer);
+  countTimer = setTimeout(() => {
+    if (id !== run || counted.has(key)) return;
+    counted.add(key);
+    fetch(COUNTER, { keepalive: true }).catch(() => {});
+  }, 3000);
 }
 
-input.addEventListener("input", () => { clearTimeout(timer); timer = setTimeout(solve, 250); });
+input.addEventListener("input", () => { clearTimeout(timer); clearTimeout(countTimer); timer = setTimeout(solve, 250); });
 $("example").addEventListener("click", () => {
   input.value = EXAMPLES[nextExample++ % EXAMPLES.length];
   clearTimeout(timer);
+  clearTimeout(countTimer);
   solve();
 });
 
