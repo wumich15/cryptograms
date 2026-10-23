@@ -1,6 +1,12 @@
 // CipherLoop inference in plain JavaScript (no dependencies, no server).
 // A line-by-line port of cipherloop/model.py + the Hungarian decoding of cipherloop/evaluate.py.
-// Checked against PyTorch with `node web/test/check.mjs`.
+// Checked against PyTorch with `node web/test/check.mjs` in github.com/wumich15/cipherloop.
+//
+// RMSNorm, RoPE, attention, the SwiGLU feed-forward and symbol-wise mean pooling are translated
+// from cipherloop/modules.py, which adapts github.com/al-jshen/alice (alice/models/modules.py and
+// alice/models/transformer.py), Copyright (c) Jeff Shen and Lindsay M. Smith, licensed under the
+// Apache License, Version 2.0 (see third_party/ALICE_LICENSE.txt). Modifications: ported from
+// PyTorch to dependency-free JavaScript on Float32Array tensors, inference only.
 
 export const VOCAB = "ABCDEFGHIJKLMNOPQRSTUVWXYZ .,!?-;:'\"";
 const NL = 26; // letters

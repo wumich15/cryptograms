@@ -5,54 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cryptograms</title>
 <meta name="description" content="Solve substitution ciphers with a 241K-parameter model that runs entirely in your browser.">
-<style>
-  /* Visual style modeled on Autograder.io's open-source frontend (github.com/eecs-autograder/ag-website-vue). */
-  :root {
-    --text: hsl(0, 0%, 15%);
-    --muted: #666;
-    --banner: hsl(212, 20%, 90%);
-    --panel: hsl(210, 13%, 95%);
-    --border: hsl(210, 12%, 80%);
-    --link: hsl(208, 59%, 45%);
-    --focus: hsl(208, 59%, 55%);
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: white; color: var(--text); font: 16px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
-         min-height: 100vh; display: flex; flex-direction: column; }
-  a { color: var(--link); }
-  #banner { display: flex; justify-content: space-between; align-items: center; background: var(--banner);
-            padding: .5rem 1rem; }
-  #banner h1 { font-size: 1.5rem; font-weight: normal; }
-  #banner a { font-size: .875rem; text-decoration: none; }
-  #banner a:hover { text-decoration: underline; }
-  main { width: 100%; max-width: 760px; margin: 0 auto; padding: 1.25rem 1rem 2rem; }
-  .label-row { display: flex; justify-content: space-between; align-items: baseline; margin: 0 0 .25rem; }
-  .label { font-size: .875rem; font-weight: bold; }
-  #example { font-size: .875rem; background: none; border: none; color: var(--link); cursor: pointer; font-family: inherit; }
-  #example:hover { text-decoration: underline; }
-  textarea, #out { width: 100%; font: 15px/1.5 Menlo, Consolas, "Liberation Mono", monospace; color: var(--text); }
-  textarea { min-height: 9rem; resize: vertical; padding: .375rem; border: 1px solid var(--border); border-radius: 2px;
-             background: white; }
-  textarea:focus { outline: none; border-color: var(--focus); box-shadow: 0 0 0 2px hsla(208, 59%, 55%, .25); }
-  .section-header { display: flex; align-items: center; margin: 1.5rem 0 .5rem; font-size: .875rem; font-weight: bold; }
-  .section-header::before, .section-header::after { content: ""; height: 1px; background: var(--border); }
-  .section-header::before { width: .75rem; margin-right: .5rem; }
-  .section-header::after { flex: 1; margin-left: .5rem; }
-  #out { min-height: 3.5em; padding: .5rem .625rem; background: var(--panel); border: 1px solid var(--border);
-         border-radius: 2px; white-space: pre-wrap; word-break: break-word; }
-  details { margin-top: .75rem; font-size: .875rem; }
-  summary { cursor: pointer; color: var(--link); }
-  ol { margin: .5rem 0 0; padding-left: 2.25em; font: 13px/1.5 Menlo, Consolas, "Liberation Mono", monospace; }
-  li { white-space: pre-wrap; word-break: break-word; margin-bottom: .25rem; }
-  footer { margin-top: auto; padding: .75rem 1rem; border-top: 1px solid var(--border); background: var(--panel);
-           color: var(--muted); font-size: .75rem; text-align: center; }
-  footer p { max-width: 760px; margin: 0 auto; }
-</style>
+<link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
 <div id="banner">
-  <h1>Cryptograms</h1>
-  <a href="https://github.com/wumich15/cryptograms">Source</a>
+  <h1><a href="./">Cryptograms</a></h1>
+  <nav>
+    <a href="about.html">About</a>
+    <a href="https://github.com/wumich15/cryptograms">Source</a>
+  </nav>
 </div>
 <main>
   <div class="label-row">
@@ -67,14 +28,7 @@
     <summary>Show steps</summary>
     <ol id="steps"></ol>
   </details>
-
 </main>
-<footer>
-  <p>Inference runs locally on your browser! The site keeps an anonymous count of ciphers decoded. Model: CipherLoop-S (241K parameters), built on
-    ALICE (Shen &amp; Smith, <a href="https://arxiv.org/abs/2509.07282">arXiv:2509.07282</a>; code Apache-2.0).
-    Trained on QUOTES500K (Goel, Madhok &amp; Garg, ECIR 2018), released by its authors for educational and research
-    purposes; this site is non-commercial.</p>
-</footer>
-<script type="module" src="app.js?v=4"></script>
+<script type="module" src="app.js?v=5"></script>
 </body>
 </html>
